@@ -1,0 +1,29 @@
+{
+  "name": "ScrapeTheNews",
+  "version": "1.0.0",
+  "description": "This app will allow you to save articles from the New York times. You will be able to view the articles and save them in your database, retrieve saved articles and remove/delete them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobkrstic/ScrapeTheNews.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bobkrstic/ScrapeTheNews/issues"
+  },
+  "homepage": "https://github.com/bobkrstic/ScrapeTheNews#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "mongojs": "^2.4.1",
+    "mongoose": "^4.11.10",
+    "request": "^2.81.0"
+  }
+}
