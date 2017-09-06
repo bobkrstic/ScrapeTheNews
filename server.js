@@ -8,12 +8,17 @@ var cheerio = require("cheerio");
 // Initialize Express
 var app = express();
 
+
+// set up a static folder (public) for our web app
+app.use(express.static("public"));
+
 // Database configuration
 var databaseUrl = "newYorkTimes";
 var collections = ["scrapedData"];
 
 // Hook mongojs configuration to the db variable
 var db = mongojs(databaseUrl, collections);
+
 db.on("error", function(error) {
   console.log("Database Error:", error);
 });
