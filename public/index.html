@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <title>Scraping With Mongoose</title>
     <style>
-      body { background-color: #F2F6D0 }
-      #wrapper {
+
+    header {
+      text-align: center;
+      /*body { background-color: #F2F6D0 }*/
+    }
+/*      #wrapper {
         width: 960px;
         margin-left: auto;
         margin-right: auto;
         padding-top: 5%;
-      }
+      }*/
       #articles {
         display: inline-block;
-        overflow: auto;
-        width: 60%;
+        overflow: scroll;
+        /*width: 60%; */
         height: 700px;
       }
       #notes {
@@ -34,54 +38,81 @@
         height: 200px;
         font-size: 18px;
       }
-
+/*
       #formSub {
         width: 60%;
-      }
+      }*/
 
       #formScrape, #formSaved {
         width: 30%;
+        /*background-color: blue;*/
+      }
+
+      #scrapeButton {
+        /*background: blue;*/
+      }
+
+      .row {
+        margin: 20px;
+      }
+
+      .btn {
+        margin-bottom: 20px;
+      }
+
+      #titleArt {
+        margin-top: 20px;
       }
 
     </style>
+
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   </head>
   <body>
 
 
+<div class="jumbotron">
 
 
-
-    <div id="wrapper">
+    <div id="wrapper" class="container">
 
        
+      <header class="row">
+                <h1>News Article Scraper</h1>
+                <h2><i>Try it out.</i></h2>
+      </header>
 
 
-      <h1>News Article Scraper</h1>
-      <h2><i>Try it out.</i></h2>
+      <div class="container">
 
-  <!--     <div> -->
-      <form method="get" action="/scrape" id='formScrape'>
-            <input type="submit" value="Scrape The News">
-      <!-- <button>Saved Articles</button> -->
-      <!-- <button>Scrape The News</button> -->
-      </form>
+        <div class="row">
+          <form method="get" action="/scrape" id='formScrape' class="col-sm-3">
+                <input type="submit" value="Scrape The News" id="savedArticlesButton" class="btn btn-primary">
+          <!-- <button>Saved Articles</button> -->
+          <!-- <button>Scrape The News</button> -->
+          </form>
 
-      <form method="get" action="/saved_articles" id="formSaved">
-            <input type="submit" value="Saved Articles">
-      <!-- <button>Saved Articles</button> -->
-      <!-- <button>Scrape The News</button> -->
-      </form>
+          <form method="get" action="/saved_articles" id="formSaved" class="col-sm-3">
+                <input type="submit" value="Saved Articles" id="scrapeButton" class="btn btn-primary">
+          <!-- <button>Saved Articles</button> -->
+          <!-- <button>Scrape The News</button> -->
+          </form>
 
-<!--       </div> -->
+        </div>
 
+      </div>
 
-      <div id="articles"></div>
-      <div id="notes"></div>
+      <div class="container"> 
+        <div class="row">
+          <div id="articles" class="col-sm-8"></div>
+          <div id="notes" class="col-sm-4"></div>
+        </div>
+      </div>
 
 
     </div>
 
-    
+</div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

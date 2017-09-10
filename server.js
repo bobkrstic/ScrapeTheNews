@@ -104,6 +104,26 @@ app.get("/articles", function(req, res) {
 });
 
 
+
+app.get("/deleteNote/:id", function(req,res){
+
+  //console.log(req.params);
+
+  Note.remove({"_id": req.params.id
+  }, function(error, removed){
+
+    if (error) {
+      console.log(error);
+      res.send(error);
+    } else {
+      //console.log(removed);
+      res.send(removed);
+    }
+
+  });
+
+});
+
 // // listen for the route /viewNotes/:id and get the Article so we can send it to the app.js and later read it's notes
 // app.get("/viewNotes/:id", function(req, res) {
 //   // Using the id passed in the id parameter, prepare a query that finds the matching one in our db...
