@@ -3,7 +3,21 @@
   <head>
     <meta charset="UTF-8">
     <title>Scraping With Mongoose</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
     <style>
+
+
+    .jumbotron {
+      background-image: url("backPaper.jpeg");
+    }
+
+    #logoSpace {
+        /*background-image: url("nytimes.jpg");*/
+        /*background-color: #cccccc;*/
+        width: 80px;
+        height: 80px;
+        text-align: center;
+    }
 
     header {
       text-align: center;
@@ -20,6 +34,8 @@
         overflow: scroll;
         /*width: 60%; */
         height: 700px;
+        background-color: white;
+        border: 1px solid black;
       }
       #notes {
         float: right;
@@ -28,12 +44,12 @@
       textarea, input {
         display: block;
         width: 100%;
-        background-color: #FCF5C7;
+        /*background-color: #FCF5C7;*/
       }
-      input {
+/*      input {
         height: 36px;
         font-size: 24px;
-      }
+      }*/
       textarea {
         height: 200px;
         font-size: 18px;
@@ -45,11 +61,66 @@
 
       #formScrape, #formSaved {
         width: 30%;
-        /*background-color: blue;*/
       }
 
-      #scrapeButton {
-        /*background: blue;*/
+      #scrapeArticlesButton, #savedArticlesButton {
+        background: gray;
+        border-color: black;
+        border-width: 1px;
+        /*opacity: 0.5;*/
+        color: white;
+      }
+
+      #addNotes, #viewNotes, #deleteNotes, #savenote{
+        background: none;
+        border-color: black;
+        border-width: 1px;
+        color: black;
+       /* opacity: 0.2;*/
+      }
+
+      #deleteNotes, #savenote {
+        color: white;
+        background: gray;
+      }
+
+      #scrapeArticlesButton:hover {
+          background: white;
+          color: black;
+      }
+
+      #savedArticlesButton:hover {
+          background: white;
+          color: black;
+      }
+
+      #addNotes:hover {
+          background: white;
+          color: black;
+      }
+
+      #viewNotes:hover {
+          background: white;
+          color: black;
+      }
+
+      #deleteNotes:hover {
+          background: white;
+          color: black;
+      }
+
+      #savenote:hover {
+          background: white;
+          color: black;
+      }
+
+      #viewNotes:visited {
+        background: black;
+      }
+
+
+      a:visited {
+        color: red;
       }
 
       .row {
@@ -58,10 +129,19 @@
 
       .btn {
         margin-bottom: 20px;
+        border-radius: 4px;
+        margin-right: 3px;
       }
+
 
       #titleArt {
         margin-top: 20px;
+      }
+
+      .between {
+          border: 0.3px dotted gray;
+          margin-left:2px;
+          margin-right:2px;
       }
 
     </style>
@@ -76,10 +156,17 @@
 
     <div id="wrapper" class="container">
 
+
+      <div>
+
+            <img id="logoSpace" src="nytimes.jpg">
+
+      </div>
+
        
       <header class="row">
-                <h1>News Article Scraper</h1>
-                <h2><i>Try it out.</i></h2>
+                <h1>New York Times Article Scraper</h1>
+                <!-- <h2><i>Try it out.</i></h2> -->
       </header>
 
 
@@ -87,13 +174,13 @@
 
         <div class="row">
           <form method="get" action="/scrape" id='formScrape' class="col-sm-3">
-                <input type="submit" value="Scrape The News" id="savedArticlesButton" class="btn btn-primary">
+                <input type="submit" value="Scrape The News" id="scrapeArticlesButton" class="btn btn-primary">
           <!-- <button>Saved Articles</button> -->
           <!-- <button>Scrape The News</button> -->
           </form>
 
           <form method="get" action="/saved_articles" id="formSaved" class="col-sm-3">
-                <input type="submit" value="Saved Articles" id="scrapeButton" class="btn btn-primary">
+                <input type="submit" value="Saved Articles" id="savedArticlesButton" class="btn btn-primary">
           <!-- <button>Saved Articles</button> -->
           <!-- <button>Scrape The News</button> -->
           </form>
